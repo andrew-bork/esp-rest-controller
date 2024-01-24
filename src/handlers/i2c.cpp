@@ -50,7 +50,7 @@ const char * i2c_error_msgs[] = {
 };
 
 void register_handlers(AsyncWebServer& server) {
-// bus0.setPins(16, 17);
+    
     AsyncCallbackJsonWebHandler* handler = new AsyncCallbackJsonWebHandler("/i2c/send", [](AsyncWebServerRequest *request, JsonVariant &json) {
         Serial.println("Recived request to send i2c");
         int device_address = json["device_address"];
